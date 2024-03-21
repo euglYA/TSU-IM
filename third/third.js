@@ -51,11 +51,12 @@ const superposition = () => {
 }
 
 let values = []
-
-for (let i = 0; i < 1000; i++) {
+let N = 100000;
+for (let i = 0; i < N; i++) {
     values.push(superposition());
 }
 
-console.log(mean(values));
-console.log(variance(values));
+console.log("Количество значений: ", N)
+console.log("Выборочное среднее:", mean(values));
+console.log("Выборочная дисперсия:", variance(values));
 
