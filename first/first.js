@@ -1,3 +1,12 @@
+const getRandomValue = () => {
+    let randomValue = Math.random();
+    while (randomValue == 1 || randomValue == 0) {
+        randomValue = Math.random();
+    }
+    return randomValue;
+}
+
+
 const getRandomArray = (size) => {
     let arr = [];
     for (let i = 0; i < size; i++) {

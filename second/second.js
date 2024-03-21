@@ -47,6 +47,11 @@ for (let i = 0; i < count; i++) {
         first: game.index[getRandomChoice(players.first)],
         second: game.index[getRandomChoice(players.second)]
     }
-    firstPlayerSum += game.matrix[choices.first][choices.second] 
+    firstPlayerSum += game.matrix[choices.first][choices.second]
+    // if (firstPlayerSum >= 0) {
+    //     console.log("+".repeat(firstPlayerSum))
+    // } else {
+    //     console.log("-".repeat(-1 * firstPlayerSum))
+    // }
 }
 console.log(`First player average win, ${count} games: `, firstPlayerSum / count)
