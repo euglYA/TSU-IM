@@ -18,7 +18,7 @@ const getRandomChoice = (probabilities) => {
     }
 }
 
-function mean(data) {
+const mean = (data) => {
     let sum = 0;
     for (let i = 0; i < data.length; i++) {
         sum += data[i];
@@ -26,7 +26,7 @@ function mean(data) {
     return sum / data.length;
 }
 
-function variance(data) {
+const variance = (data) => {
     const n = data.length;
     const mean = data.reduce((acc, val) => acc + val, 0) / n;
     
