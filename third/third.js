@@ -42,11 +42,11 @@ let probabilities = {
 };
 
 const superposition = () => {
-    let ksi = getRandomChoice(probabilities)
-    if (ksi.choice == 0) {
-        return (1 - (1 / ksi.randomValue))
+    let alpha = getRandomChoice(probabilities)
+    if (alpha.choice == 0) {
+        return (1 - (1 / alpha.randomValue))
     } else {
-        return (1 - Math.log(1 - ksi.randomValue)) ** (-1/3)
+        return (1 - Math.log(1 - alpha.randomValue)) ** (-1/3)
     }
 }
 
