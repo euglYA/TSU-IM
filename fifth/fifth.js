@@ -21,21 +21,6 @@ const stochasticProcess = (data, T) => {
     };
 
     while (time < T) {
-        // let lambda = state === 0 ? data.lambda[0] : data.lambda[1];
-        // let alpha = state === 0 ? data.alpha[0] : data.alpha[1];
-
-        // let deltaTime = -Math.log(getRandomValue()) / lambda;
-        // time += deltaTime;
-
-        // if (time < T) {
-        //     if (state === 0) {
-        //         totalTimeState0 += deltaTime;
-        //     } else {
-        //         totalTimeState1 += deltaTime;
-        //     }
-
-        //     state = getRandomValue() < alpha ? 1 - state : state;
-        // }
         let occurrenceTime = -Math.log(getRandomValue()) / lambda[state];
         let transitionTime = Math.log(getRandomValue()) / q[state][state];
 
