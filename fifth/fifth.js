@@ -57,21 +57,22 @@ const stochasticProcess = (data, T) => {
 
 const data = {
     lambda: {
-        0: 0.5,
-        1: 0.7
+        0: 0.2,
+        1: 0.07
     },
     alpha: {
-        0: 0.8,
-        1: 0.2
+        0: 0.6,
+        1: 0.4
     },
     q: [
-        [-0.8, 0.8],
-        [0.2, -0.2]
+        [-0.6, 0.6],
+        [0.4, -0.4]
     ]
 }
 
 const T = 1000;
 
 const p = stochasticProcess(data, T);
+console.log(`Заданные параметры:\nT = ${T}; lambda = ${data.lambda[0]}, ${data.lambda[1]}; alpha = ${data.alpha[0]}, ${data.alpha[1]}`)
 console.log(`Оценка вероятности состояния 0: ${p[0]}`);
 console.log(`Оценка вероятности состояния 1: ${p[1]}`);
