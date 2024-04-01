@@ -11,6 +11,8 @@ const getRandomValue = (size = 1) => {
 }
 
 const stochasticProcess = (data, T) => {
+    let lambda = data.lambda;
+    let q = data.q;
     let state = getRandomValue() < data.alpha[0] ? 0 : 1;
     let time = 0;
     let totalTimeState = {
@@ -34,8 +36,8 @@ const stochasticProcess = (data, T) => {
 
         //     state = getRandomValue() < alpha ? 1 - state : state;
         // }
-        let occurrenceTime = -Math.log(getRandomValue()) / data.lambda[state]
-        let transitionTime = Math.log(getRandomValue()) / -data.alpha[state]
+        let occurrenceTime = -Math.log(getRandomValue()) / lambda[state];
+        let transitionTime = Math.log(getRandomValue()) / q[state][state];
 
         if (occurrenceTime < transitionTime) {
             time += occurrenceTime;
@@ -61,7 +63,11 @@ const data = {
     alpha: {
         0: 0.8,
         1: 0.2
-    }
+    },
+    q: [
+        [-0.8, 0.8],
+        [0.2, -0.2]
+    ]
 }
 
 const T = 1000;
